@@ -1,5 +1,8 @@
 //Busca a blioteca
 var express = require("express");
+
+var modulo = require("./mod_teste");
+
 // 
 var app = express();
 
@@ -18,7 +21,8 @@ app.get("/noticias", function(req, res){
 });
 
 app.listen(80, function(){
-	console.log("Servidor rodando com Express.")
+	//console.log("Servidor rodando com Express.")
+	console.log(modulo());
 });
 	
 
