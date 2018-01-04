@@ -1,24 +1,9 @@
-//Busca a blioteca
-var express = require("express");
-// 
-var app = express();
+var app = require("./config/server");
 
-app.set("view engine", "ejs");
-
-app.get("/", function(req, res){
-	res.render("home/index.ejs");	
-});
-
-app.get("/formulario_inclusao_noticia", function(req, res){
-	res.render("admin/form_add_noticia.ejs");	
-});
-
-app.get("/noticias", function(req, res){
-	res.render("noticias/noticias.ejs");	
-});
+var routes = require("./app/routes/noticias")(app);
+var routeshome = require("./app/routes/home")(app);
+var routesformulario = require("./app/routes/formulario_inclusao_noticia")(app);
 
 app.listen(80, function(){
-	console.log("Servidor rodando com Express.")
+	console.log("Servidor ON")
 });
-	
-
